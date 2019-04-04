@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
+import { Music, MusicService } from '../services/music.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,10 @@ import { AuthenticateService } from '../services/authentication.service';
 export class DashboardPage implements OnInit {
   userEmail: string;
 
+  musics: Music[];
+
   constructor(
+    private musicService: MusicService,
     private navCtrl: NavController,
     private authService: AuthenticateService
   ) {}
@@ -18,9 +22,16 @@ export class DashboardPage implements OnInit {
   ngOnInit(){
     if(this.authService.userDetails()){
       this.userEmail = this.authService.userDetails().email;
-    }else{
+      this.musicService.getMusics().subscribe(res => {
+        this.musics = res;
+      });
+    } else {
       this.navCtrl.navigateBack('');
     }
+  }
+
+  remove(item) {
+    this.musicService.removeMusic(item.id);
   }
 
   logout(){

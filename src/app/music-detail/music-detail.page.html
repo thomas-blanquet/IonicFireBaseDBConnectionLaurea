@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Title" [(ngModel)]="music.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Artist" [(ngModel)]="music.artist"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea required type="text" placeholder="Lyrics" [(ngModel)]="music.lyrics"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveMusic()">Save</ion-button>
+</ion-content>

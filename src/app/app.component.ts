@@ -17,6 +17,14 @@ export class AppComponent {
     this.initializeApp();
   }
 
+  public appPages = [
+      {
+        title: 'Musics',
+        url: '/dashboard',
+        icon: 'briefcase'
+      },
+    ];
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
