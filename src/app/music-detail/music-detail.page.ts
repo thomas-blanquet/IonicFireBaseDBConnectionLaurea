@@ -1,7 +1,7 @@
 // Thomas Blanquet - 1801681
 // Leo Le Diouron - 1801701
 // Corentin Cailleaud - 1801684
-// Alexandre Berthon -
+// Alexandre Berthon - 1801680
 
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController, LoadingController } from '@ionic/angular';
@@ -32,6 +32,7 @@ export class MusicDetailPage implements OnInit {
     private loadingController: LoadingController
   ) {}
 
+  // If user is looged, get the song's informations
   ngOnInit(){
     if(this.authService.userDetails()){
       this.musicId = this.route.snapshot.params['id'];
@@ -43,6 +44,7 @@ export class MusicDetailPage implements OnInit {
     }
   }
 
+  // Get song's informations
   async loadMusic() {
     const loading = await this.loadingController.create({
       message: 'Loading Music..'
@@ -55,6 +57,7 @@ export class MusicDetailPage implements OnInit {
     });
   }
 
+  // Save a new song or update an existing one depending if it already have a id (which mean it is already in the DB)
   async saveMusic() {
     const loading = await this.loadingController.create({
       message: 'Saving Music..'

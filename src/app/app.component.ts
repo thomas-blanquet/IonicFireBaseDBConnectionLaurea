@@ -1,7 +1,7 @@
 // Thomas Blanquet - 1801681
 // Leo Le Diouron - 1801701
 // Corentin Cailleaud - 1801684
-// Alexandre Berthon -
+// Alexandre Berthon - 1801680
 
 import { Component } from '@angular/core';
 

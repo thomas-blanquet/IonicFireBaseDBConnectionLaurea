@@ -1,7 +1,7 @@
 // Thomas Blanquet - 1801681
 // Leo Le Diouron - 1801701
 // Corentin Cailleaud - 1801684
-// Alexandre Berthon -
+// Alexandre Berthon - 1801680
 
 import { Component, OnInit } from '@angular/core';
 import { NavController, ModalController } from '@ionic/angular';
@@ -14,7 +14,6 @@ import { Music, MusicService } from '../services/music.service';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  userEmail: string;
 
   musics: Music[];
 
@@ -25,8 +24,8 @@ export class DashboardPage implements OnInit {
   ) {}
 
   ngOnInit(){
+    // Get song list if the user is logged
     if(this.authService.userDetails()){
-      this.userEmail = this.authService.userDetails().email;
       this.musicService.getMusics().subscribe(res => {
         this.musics = res;
       });
@@ -35,6 +34,7 @@ export class DashboardPage implements OnInit {
     }
   }
 
+  // remove a song from the list
   remove(item) {
     this.musicService.removeMusic(item.id);
   }
