@@ -1,3 +1,8 @@
+// Thomas Blanquet - 1801681
+// Leo Le Diouron - 1801701
+// Corentin Cailleaud - 1801684
+// Alexandre Berthon -
+
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';

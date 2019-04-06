@@ -1,3 +1,8 @@
+// Thomas Blanquet - 1801681
+// Leo Le Diouron - 1801701
+// Corentin Cailleaud - 1801684
+// Alexandre Berthon -
+
 import { Injectable } from "@angular/core";
 import * as firebase from 'firebase/app';
 
